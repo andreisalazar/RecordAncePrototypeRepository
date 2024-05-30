@@ -41,6 +41,7 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            forgotpasswordLabel = new Label();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)signinPhoto).BeginInit();
             panel1.SuspendLayout();
@@ -65,6 +66,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(forgotpasswordLabel);
             panel1.Controls.Add(signupLabel);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(signinButton);
@@ -83,7 +85,7 @@
             // 
             signupLabel.AutoSize = true;
             signupLabel.Font = new Font("Georgia", 10.2F, FontStyle.Underline, GraphicsUnit.Point);
-            signupLabel.Location = new Point(293, 457);
+            signupLabel.Location = new Point(291, 468);
             signupLabel.Name = "signupLabel";
             signupLabel.Size = new Size(74, 20);
             signupLabel.TabIndex = 8;
@@ -94,7 +96,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(43, 457);
+            label5.Location = new Point(41, 468);
             label5.Name = "label5";
             label5.Size = new Size(253, 20);
             label5.TabIndex = 7;
@@ -106,7 +108,7 @@
             signinButton.FlatStyle = FlatStyle.Flat;
             signinButton.Font = new Font("Arial Black", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             signinButton.ForeColor = SystemColors.ButtonHighlight;
-            signinButton.Location = new Point(43, 396);
+            signinButton.Location = new Point(41, 407);
             signinButton.Name = "signinButton";
             signinButton.Size = new Size(101, 43);
             signinButton.TabIndex = 6;
@@ -170,6 +172,17 @@
             label1.TabIndex = 0;
             label1.Text = "RecordAnce";
             // 
+            // forgotpasswordLabel
+            // 
+            forgotpasswordLabel.AutoSize = true;
+            forgotpasswordLabel.Font = new Font("Georgia", 7.8F, FontStyle.Underline, GraphicsUnit.Point);
+            forgotpasswordLabel.Location = new Point(44, 377);
+            forgotpasswordLabel.Name = "forgotpasswordLabel";
+            forgotpasswordLabel.Size = new Size(117, 16);
+            forgotpasswordLabel.TabIndex = 9;
+            forgotpasswordLabel.Text = "Forgot password?";
+            forgotpasswordLabel.Click += forgotpasswordLabel_Click;
+            // 
             // SignInPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -201,5 +214,6 @@
         private Label label3;
         private Label label2;
         private Label label1;
+        private Label forgotpasswordLabel;
     }
 }

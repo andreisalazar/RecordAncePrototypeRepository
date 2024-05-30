@@ -32,6 +32,10 @@
             panel2 = new Panel();
             signinPhoto = new PictureBox();
             panel1 = new Panel();
+            lastnameTextBox = new TextBox();
+            label6 = new Label();
+            firstnameTextBox = new TextBox();
+            label5 = new Label();
             signupButton = new Button();
             passwordTextBox = new TextBox();
             label4 = new Label();
@@ -65,6 +69,10 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ButtonHighlight;
+            panel1.Controls.Add(lastnameTextBox);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(firstnameTextBox);
+            panel1.Controls.Add(label5);
             panel1.Controls.Add(signupButton);
             panel1.Controls.Add(passwordTextBox);
             panel1.Controls.Add(label4);
@@ -77,24 +85,60 @@
             panel1.Size = new Size(439, 724);
             panel1.TabIndex = 4;
             // 
+            // lastnameTextBox
+            // 
+            lastnameTextBox.BorderStyle = BorderStyle.FixedSingle;
+            lastnameTextBox.Location = new Point(47, 384);
+            lastnameTextBox.Name = "lastnameTextBox";
+            lastnameTextBox.Size = new Size(352, 27);
+            lastnameTextBox.TabIndex = 10;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(45, 363);
+            label6.Name = "label6";
+            label6.Size = new Size(95, 20);
+            label6.TabIndex = 9;
+            label6.Text = "Last Name:";
+            // 
+            // firstnameTextBox
+            // 
+            firstnameTextBox.BorderStyle = BorderStyle.FixedSingle;
+            firstnameTextBox.Location = new Point(45, 328);
+            firstnameTextBox.Name = "firstnameTextBox";
+            firstnameTextBox.Size = new Size(352, 27);
+            firstnameTextBox.TabIndex = 8;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(43, 307);
+            label5.Name = "label5";
+            label5.Size = new Size(98, 20);
+            label5.TabIndex = 7;
+            label5.Text = "First Name:";
+            // 
             // signupButton
             // 
             signupButton.BackColor = Color.Maroon;
             signupButton.FlatStyle = FlatStyle.Flat;
             signupButton.Font = new Font("Arial Black", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             signupButton.ForeColor = SystemColors.ButtonHighlight;
-            signupButton.Location = new Point(43, 396);
+            signupButton.Location = new Point(48, 491);
             signupButton.Name = "signupButton";
-            signupButton.Size = new Size(101, 43);
+            signupButton.Size = new Size(182, 43);
             signupButton.TabIndex = 6;
-            signupButton.Text = "Sign-up";
+            signupButton.Text = "Create Account";
             signupButton.UseVisualStyleBackColor = false;
             signupButton.Click += signupButton_Click;
             // 
             // passwordTextBox
             // 
             passwordTextBox.BorderStyle = BorderStyle.FixedSingle;
-            passwordTextBox.Location = new Point(44, 347);
+            passwordTextBox.Location = new Point(48, 447);
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.Size = new Size(352, 27);
             passwordTextBox.TabIndex = 5;
@@ -103,7 +147,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(41, 323);
+            label4.Location = new Point(45, 423);
             label4.Name = "label4";
             label4.Size = new Size(86, 20);
             label4.TabIndex = 4;
@@ -156,7 +200,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "SignUpPage";
-            Text = "SignUpPage";
+            Text = "Sign-up";
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)signinPhoto).EndInit();
             panel1.ResumeLayout(false);
@@ -176,5 +220,9 @@
         private Label label3;
         private Label label2;
         private Label label1;
+        private TextBox lastnameTextBox;
+        private Label label6;
+        private TextBox firstnameTextBox;
+        private Label label5;
     }
 }

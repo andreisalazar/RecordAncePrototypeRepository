@@ -14,24 +14,58 @@ namespace RecordAncePrototype
             InitializeComponent();
         }
 
-        SignUpPage signuppage= new SignUpPage();
+        SignUpPage signuppage = new SignUpPage();
         NavigationPage navigationpage = new NavigationPage();
         public static string usernameDB = "usernameDB.txt";
         public static string passwordDB = "passwordDB.txt";
 
         private void signinButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            navigationpage.ShowDialog();
+            //Validate if the account exists
+            //String to read all the usernames inside the text file 
+            string[] usernameList = File.ReadAllLines(usernameDB);
+            string[] passwordList = File.ReadAllLines(passwordDB);
 
-            File.AppendAllText(usernameDB, usernameTextBox.Text);
-            File.AppendAllText(passwordDB, usernameTextBox.Text);
+            
+            int usernameIndex = Array.IndexOf(usernameList, usernameTextBox.Text);
+            if (!usernameList.Contains(usernameTextBox.Text) 
+                || usernameIndex == -1)
+            {
+                MessageBox.Show("Account not found.",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                usernameTextBox.Focus();
+                usernameTextBox.SelectAll();
+                passwordTextBox.Text = "";
+            }
+            if (passwordList[usernameIndex] == passwordTextBox.Text)
+            {
+                proceedToNavigation();
+            }
+            else
+            {
+                MessageBox.Show("Incorrect password." + passwordList[usernameIndex].ToString(),
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                passwordTextBox.Focus();
+                passwordTextBox.SelectAll();
+            }
+
         }
 
         private void signupLabel_Click(object sender, EventArgs e)
         {
             this.Hide();
             signuppage.ShowDialog();
+        }
+
+        public void proceedToNavigation()
+        {
+            this.Hide();
+            navigationpage.ShowDialog();
+        }
+
+        private void forgotpasswordLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
