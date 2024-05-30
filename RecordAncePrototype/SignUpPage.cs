@@ -65,6 +65,7 @@ namespace RecordAncePrototype
                    , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 usernameTextBox.Focus();
                 usernameTextBox.SelectAll();
+
             }
             //Input validation for unnecessary/prohibited characters
             else if(
